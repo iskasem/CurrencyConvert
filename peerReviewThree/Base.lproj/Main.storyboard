@@ -15,22 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-eF-fdg">
-                                <rect key="frame" x="77.5" y="244" width="274" height="34"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount in US dollars" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-WO-EIC">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US Dollars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-fO-NkM">
-                                        <rect key="frame" x="182.5" y="0.0" width="91.5" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1P-Rn-5UG">
                                 <rect key="frame" x="57" y="470.5" width="59" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -82,14 +66,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-jZ-UJe">
-                                <rect key="frame" x="57" y="315" width="270" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-jZ-UJe">
+                                <rect key="frame" x="51" y="378" width="328" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Convert"/>
                                 <connections>
                                     <action selector="convertBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FZB-BA-hFl"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Lfs-de-dcH">
+                                <rect key="frame" x="51" y="314" width="322" height="31"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-LG-DEs">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="32"/>
+                                        <segments>
+                                            <segment title="USD"/>
+                                            <segment title="EURO"/>
+                                            <segment title="YEN"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Currency " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urg-Aj-O13">
+                                        <rect key="frame" x="181" y="0.0" width="141" height="31"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nV-2I-RC1">
+                                <rect key="frame" x="65" y="96" width="252" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-eF-fdg">
+                                <rect key="frame" x="47" y="238" width="268" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-WO-EIC">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-fO-NkM">
+                                        <rect key="frame" x="198" y="0.0" width="70" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,17 +132,10 @@
                             <constraint firstItem="8Is-L6-tK0" firstAttribute="leading" secondItem="Cce-Sb-36k" secondAttribute="leading" id="3wa-HG-M6G"/>
                             <constraint firstItem="nf5-np-UOs" firstAttribute="trailing" secondItem="QoN-SY-6bM" secondAttribute="trailing" id="4da-eA-E3w"/>
                             <constraint firstItem="Cce-Sb-36k" firstAttribute="trailing" secondItem="yX3-8z-zya" secondAttribute="trailing" id="61h-H9-Q1S"/>
-                            <constraint firstItem="2L8-eF-fdg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="6AO-Rr-YHF"/>
                             <constraint firstItem="QoN-SY-6bM" firstAttribute="trailing" secondItem="qWW-ER-4f6" secondAttribute="trailing" id="Ayf-Cc-L1N"/>
                             <constraint firstItem="qWW-ER-4f6" firstAttribute="height" secondItem="N1P-Rn-5UG" secondAttribute="height" id="BVo-hG-bsg"/>
-                            <constraint firstItem="ZgR-jZ-UJe" firstAttribute="top" secondItem="2L8-eF-fdg" secondAttribute="bottom" constant="37" id="Cbi-Pg-VgS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2L8-eF-fdg" secondAttribute="trailing" constant="62.5" id="CpN-Ka-Wz2"/>
                             <constraint firstItem="8Is-L6-tK0" firstAttribute="top" secondItem="Cce-Sb-36k" secondAttribute="bottom" constant="45" id="IvS-5O-wn3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZgR-jZ-UJe" secondAttribute="trailing" constant="87" id="P2N-ea-2HN"/>
-                            <constraint firstItem="ZgR-jZ-UJe" firstAttribute="leading" secondItem="N1P-Rn-5UG" secondAttribute="leading" id="QAC-Pn-qYc"/>
                             <constraint firstItem="cw9-vs-Cxc" firstAttribute="trailing" secondItem="nf5-np-UOs" secondAttribute="trailing" id="Qca-1J-6zE"/>
-                            <constraint firstItem="2L8-eF-fdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77.5" id="Sle-jV-TGf"/>
-                            <constraint firstItem="2L8-eF-fdg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="7.5" id="TVN-wv-ssl"/>
                             <constraint firstItem="cw9-vs-Cxc" firstAttribute="leading" secondItem="nf5-np-UOs" secondAttribute="leading" id="W1j-5p-AOP"/>
                             <constraint firstItem="cw9-vs-Cxc" firstAttribute="top" secondItem="nf5-np-UOs" secondAttribute="bottom" constant="45" id="X42-OO-dcD"/>
                             <constraint firstItem="yX3-8z-zya" firstAttribute="leading" secondItem="N1P-Rn-5UG" secondAttribute="leading" id="X97-23-r0K"/>
